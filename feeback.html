@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Feedback Form</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="text-center">Internship Feedback Form</h1>
+    <form id="feedback-form" action="submit.php" method="POST">
+      <div class="form-page active" id="page1">
+        <h2>Page 1</h2>
+        <div class="form-question">
+          <label>Question 1: How satisfied were you with the overall internship program?</label>
+          <div class="form-check">
+            <input type="radio" id="q1-option1" name="q1" class="form-check-input" value="option1" required>
+            <label class="form-check-label" for="q1-option1">Very Satisfied</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" id="q1-option2" name="q1" class="form-check-input" value="option2" required>
+            <label class="form-check-label" for="q1-option2">Satisfied</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" id="q1-option3" name="q1" class="form-check-input" value="option3" required>
+            <label class="form-check-label" for="q1-option3">Neutral</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" id="q1-option4" name="q1" class="form-check-input" value="option4" required>
+            <label class="form-check-label" for="q1-option4">Dissatisfied</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" id="q1-option5" name="q1" class="form-check-input" value="option5" required>
+            <label class="form-check-label" for="q1-option5">Very Dissatisfied</label>
+          </div>
+        </div>
+        <div class="form-question">
+          <label>Question 2: How would you rate the support and guidance provided by the internship supervisor?</label>
+          <div class="form-check">
+            <input type="radio" id="q2-option1" name="q2" class="form-check-input" value="option1" required>
+            <label class="form-check-label" for="q2-option1">Excellent</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" id="q2-option2" name="q2" class="form-check-input" value="option2" required>
+            <label class="form-check-label" for="q2-option2">Good</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" id="q2-option3" name="q2" class="form-check-input" value="option3" required>
+            <label class="form-check-label" for="q2-option3">Average</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" id="q2-option4" name="q2" class="form-check-input" value="option4" required>
+            <label class="form-check-label" for="q2-option4">Poor</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" id="q2-option5" name="q2" class="form-check-input" value="option5" required>
+            <label class="form-check-label" for="q2-option5">Very Poor</label>
+          </div>
+        </div>
+        <div class="form-question">
+          <label>Question 3: Did the internship program meet your expectations and learning objectives?</label>
+          <div class="form-check">
+            <input type="radio" id="q3-option1" name="q3" class="form-check-input" value="yes" required>
+            <label class="form-check-label" for="q3-option1">Yes</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" id="q3-option2" name="q3" class="form-check-input" value="no" required>
+            <label class="form-check-label" for="q3-option2">No</label>
+          </div>
+          <textarea id="q3-reason" name="q3-reason" class="form-control reason-textarea" placeholder="Reason for your choice" required></textarea>
+        </div>
+        <div class="form-buttons">
+          <button type="button" class="next-button" onclick="nextPage()">Next</button>
+        </div>
+      </div>
+
+      <div class="form-page" id="page2">
+        <h2>Page 2</h2>
+        <div class="form-question">
+          <label>Question 4: Were you provided with enough resources and tools to successfully complete your tasks?</label>
+          <div class="form-check">
+            <input type="radio" id="q4-option1" name="q4" class="form-check-input" value="yes" required>
+            <label class="form-check-label" for="q4-option1">Yes</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" id="q4-option2" name="q4" class="form-check-input" value="no" required>
+            <label class="form-check-label" for="q4-option2">No</label>
+          </div>
+          <textarea id="q4-reason" name="q4-reason" class="form-control reason-textarea" placeholder="Reason for your choice" required></textarea>
+        </div>
+        <div class="form-question">
+          <label>Question 5: Did you have opportunities to collaborate and work with other team members?</label>
+          <div class="form-check">
+            <input type="radio" id="q5-option1" name="q5" class="form-check-input" value="yes" required>
+            <label class="form-check-label" for="q5-option1">Yes</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" id="q5-option2" name="q5" class="form-check-input" value="no" required>
+            <label class="form-check-label" for="q5-option2">No</label>
+          </div>
+          <textarea id="q5-reason" name="q5-reason" class="form-control reason-textarea" placeholder="Reason for your choice" required></textarea>
+        </div>
+        <div class="form-question">
+          <label>Question 6: Were the communication channels between you and the company/team effective and efficient?</label>
+          <div class="form-check">
+            <input type="radio" id="q6-option1" name="q6" class="form-check-input" value="yes" required>
+            <label class="form-check-label" for="q6-option1">Yes</label>
+          </div>
+          <div class="form-check">
+            <input type="radio" id="q6-option2" name="q6" class="form-check-input" value="no" required>
+            <label class="form-check-label" for="q6-option2">No</label>
+          </div>
+          <textarea id="q6-reason" name="q6-reason" class="form-control reason-textarea" placeholder="Reason for your choice" required></textarea>
+        </div>
+        <div class="form-buttons">
+          <button type="button" class="previous-button" onclick="previousPage()">Previous</button>
+          <button type="button" class="next-button" onclick="nextPage()">Next</button>
+        </div>
+      </div>
+
+      <div class="form-page" id="page3">
+        <h2>Page 3</h2>
+        <div class="form-question">
+          <label>Question 7: What aspects of the internship program did you find most valuable and beneficial?</label>
+          <textarea id="q7-reason" name="q7-reason" class="form-control reason-textarea" placeholder="Please give your answer" required></textarea>
+        </div>
+        <div class="form-question">
+          <label>Question 8: Please provide any suggestions or feedback to help improve the internship program in the future.</label>
+          <textarea id="q8-reason" name="q8-reason" class="form-control reason-textarea" placeholder="Please give your answer" required></textarea>
+        </div>
+        <div class="form-buttons">
+          <button type="button" class="previous-button" onclick="previousPage()">Previous</button>
+          <button type="submit" class="submit-button">Submit</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    function submitForm() {
+      document.getElementById("feedback-form").submit();
+    }
+  </script>
+</body>
+</html>
